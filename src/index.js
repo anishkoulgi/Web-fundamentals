@@ -1,3 +1,4 @@
+import { fields } from "./constants";
 import { resetForm } from "./reset";
 import { checkMaritalStatus, validate } from "./validate";
 
@@ -10,6 +11,26 @@ function app() {
   const resetButton = document.getElementById("reset");
   const firstNameElement = document.getElementById("firstname");
 
+  function displayForm(form) {
+    let displayString = "";
+    fields.forEach((field) => {
+      if (field.display) {
+        displayString +=
+          field.display +
+          ": " +
+          (form.elements[field.name].value || "N.A") +
+          "\n";
+      }
+    });
+
+    // Use setTimeout to allow DOM changes before alert triggers
+    setTimeout(() => {
+      alert(
+        `Thank you for filling the form. Here are your details: \n${displayString}`
+      );
+    }, 10);
+  }
+
   function initializeApp() {
     // Set focus on the firstname input
     firstNameElement.focus();
@@ -17,11 +38,9 @@ function app() {
     // Handle form submit
     form.onsubmit = (e) => {
       e.preventDefault();
-      if (validate(e.target)) {
-        // Use setTimeout to allow DOM changes before alert triggers
-        setTimeout(() => {
-          alert("Thank you for filling the form");
-        }, 10);
+      const formElement = e.target;
+      if (validate(formElement)) {
+        displayForm(formElement);
       }
     };
     resetButton.onclick = () => {

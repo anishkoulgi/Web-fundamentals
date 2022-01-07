@@ -7,6 +7,7 @@ export const fields = [
     validate: (val) => val.length > 0 && val.length <= 50,
     id: "firstname",
     type: "text",
+    display: "First Name",
     key: "Please enter First Name",
   },
   {
@@ -14,6 +15,7 @@ export const fields = [
     validate: (val) => val.length > 0 && val.length <= 50,
     id: "lastname",
     type: "text",
+    display: "Last Name",
     key: "Please enter Last Name",
   },
   {
@@ -21,6 +23,7 @@ export const fields = [
     validate: (val) => val.length > 0,
     id: "gender-radio",
     type: "radio",
+    display: "Gender",
     key: "Please select Gender",
   },
   {
@@ -28,6 +31,7 @@ export const fields = [
     validate: (val) => val.length > 0,
     id: "marital-radio",
     type: "radio",
+    display: "Marital Status",
     key: "Please select Marital Status",
   },
   {
@@ -36,6 +40,7 @@ export const fields = [
       state.marital.value !== "Married" || (val.length > 0 && val.length <= 50),
     id: "spouse",
     type: "text",
+    display: "Spouse name",
     key: "Please enter Spouse name",
   },
 
@@ -44,6 +49,7 @@ export const fields = [
     validate: (val) => val.length > 0 && val.length <= 500,
     id: "other",
     type: "text",
+    display: "Other Details",
     key: "Please enter Other Details",
   },
   {
