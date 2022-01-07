@@ -61,10 +61,18 @@ body {
   margin-left: 10px;
 }
 
+.save:focus {
+  outline: #012d57 solid 1px;
+}
+
 .reset {
   background-color: #ffebe9;
   color: #e74c3c;
   margin-right: 10px;
+}
+
+.reset:focus {
+  outline: #e74c3c solid 1px;
 }
 
 .header {
@@ -114,11 +122,6 @@ textarea {
   font-size: 14px;
 }
 
-.disabled {
-  background-color: rgb(235, 235, 235);
-  cursor: not-allowed;
-}
-
 .form-control input::placeholder,
 textarea::placeholder {
   color: #b5b8be;
@@ -132,6 +135,12 @@ textarea::placeholder {
 .form-control.success input,
 .form-control.success textarea {
   border: 1px solid #2ecc71;
+}
+
+.disabled {
+  border: 1px solid #7c828d;
+  background-color: rgb(235, 235, 235);
+  cursor: not-allowed;
 }
 
 .form-control input[type="radio"] {

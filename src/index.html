@@ -32,9 +32,9 @@
           <div class="form-control">
             <label class="input-label">Gender</label>
             <div id="gender-radio" class="radio-container">
-              <input type="radio" name="gender" value="Male" />
+              <input type="radio" name="gender" id="Male" value="Male" />
               <label class="main-label" for="Male">Male</label>
-              <input type="radio" name="gender" value="Female" />
+              <input type="radio" name="gender" id="Female" value="Female" />
               <label class="main-label" for="Female">Female</label>
             </div>
             <small>Error</small>
@@ -42,10 +42,15 @@
           <div class="form-control">
             <label class="input-label">Marital Status</label>
             <div id="marital-radio" class="radio-container">
-              <input type="radio" name="marital" value="Married" />
-              <label class="main-label" for="Male">Married</label>
-              <input type="radio" name="marital" value="Unmarried" />
-              <label class="main-label" for="Female">Unmarried</label>
+              <input type="radio" name="marital" id="Married" value="Married" />
+              <label class="main-label" for="Married">Married</label>
+              <input
+                type="radio"
+                name="marital"
+                id="Unmarried"
+                value="Unmarried"
+              />
+              <label class="main-label" for="Unmarried">Unmarried</label>
             </div>
             <small>Error</small>
           </div>
@@ -74,7 +79,7 @@
           <small>Error</small>
         </div>
         <div class="button-container">
-          <button class="reset" id="reset">Reset</button>
+          <button class="reset" type="button" id="reset">Reset</button>
           <button class="save" type="submit">Save</button>
         </div>
       </form>

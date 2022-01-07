@@ -5,32 +5,41 @@ function setError(element, message) {
   const small = formControl.querySelector("small");
 
   small.innerText = message;
-  formControl.className = "form-control error";
+  formControl.classList.remove("success");
+  formControl.classList.add("error");
 }
 
 function setSuccess(element) {
   const formControl = element.parentElement;
-  formControl.className = "form-control success";
+  formControl.classList.remove("error");
+  formControl.classList.add("success");
 }
 
 export function validate(formElement) {
   let firstErrorElement = null;
+
   fields.map((field) => {
     const element = formElement.elements[field.name];
+    if (element.disabled) return;
     const controlElement = document.getElementById(field.id);
 
-    if (!field.validate(element.value)) {
+    const elementValue =
+      field.name === "terms" ? element.checked : element.value.trim();
+
+    if (!field.validate(elementValue, formElement.elements)) {
       if (!firstErrorElement) {
         if (field.type === "radio") firstErrorElement = element[0];
         else firstErrorElement = element;
       }
-      setError(controlElement, `Please enter valid ${field.name}`);
+      setError(controlElement, field.key);
     } else {
       setSuccess(controlElement);
     }
   });
 
   if (firstErrorElement) firstErrorElement.focus();
+
+  return firstErrorElement === null;
 }
 
 export function checkMaritalStatus() {
