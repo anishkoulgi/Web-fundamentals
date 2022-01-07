@@ -51,6 +51,7 @@ body {
   padding: 10px;
   font-size: 14px;
   border-radius: 4px;
+  cursor: pointer;
   outline: none;
   border: none;
 }
@@ -61,6 +62,10 @@ body {
   margin-left: 10px;
 }
 
+.save:hover {
+  background-color: #037beb;
+}
+
 .save:focus {
   outline: #012d57 solid 1px;
 }
@@ -69,6 +74,10 @@ body {
   background-color: #ffebe9;
   color: #e74c3c;
   margin-right: 10px;
+}
+
+.reset:hover {
+  background-color: #fce4e1;
 }
 
 .reset:focus {
