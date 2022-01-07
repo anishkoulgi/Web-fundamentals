@@ -1,3 +1,6 @@
+/**
+ * Fields array containing various properties and helpers
+ */
 export const fields = [
   {
     name: "firstname",
